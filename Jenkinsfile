@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'docker:latest'
-      args '--dns 172.17.0.2'
+      args '--network="host"'
     }
   }
   options {
@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build Scala toolchain') {
       environment {
-        DOCKER_HOST = credentials('docker-tcp-host')    
+        DOCKER_HOST = 'tcp://127.0.0.1:2375'
       }
       steps {
         sh "docker build -t cjww-development/scala-toolchain:latest -f scala-toolchain/Dockerfile ."
