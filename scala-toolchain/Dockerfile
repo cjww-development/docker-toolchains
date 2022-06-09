@@ -31,7 +31,7 @@ RUN \
   apk del .build-dependencies && \
   rm -rf "/tmp/"*
 
-RUN apk add --update docker openrc
+RUN apk add --update docker docker-compose openrc
 RUN rc-update add docker boot
 
 RUN apk add aws-cli

@@ -11,6 +11,7 @@ This image contains the following tools
 - Scala 2.13.7
 - SBT 1.6.2
 - Docker (Docker CLI available with Docker engine as a volume mount)
+- Docker compose
 - AWS CLI
 
 License
