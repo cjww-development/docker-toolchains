@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 RUN apt update
-RUN apt install -y wget curl gnupg ca-certificates lsb-release jq
+RUN apt install -y wget curl gnupg ca-certificates lsb-release jq zip unzip
 
 RUN apt install -y openjdk-11-jdk
 RUN java -version
