@@ -15,6 +15,7 @@ pipeline {
       }
       steps {
         sh "docker build -t cjww-development/scala-toolchain:latest -f scala-toolchain/Dockerfile ."
+        sh "docker build -t cjww-development/scala-toolchain:jdk17_2.13.8_1.6.2 -f scala-toolchain/jdk17/scala2.13.8/sbt1.6.2/Dockerfile ."
       }
     }
   }
