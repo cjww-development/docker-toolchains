@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build NodeJS toolchain') {
       steps {
-        sh "docker build -t cjww-development/nodejs-aws:latest ."
+        sh "docker build -t cjww-development/nodejs-aws:latest -f nodejs-aws/Dockerfile ."
       }
     }
   }
