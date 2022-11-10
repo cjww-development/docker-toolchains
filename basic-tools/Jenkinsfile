@@ -1,0 +1,23 @@
+pipeline {
+  agent {
+    docker {
+      image 'docker:latest'
+      args '--network="host" -v /var/run/docker.sock:/var/run/docker.sock'
+    }
+  }
+  options {
+    ansiColor('xterm')
+  }
+  stages {
+    stage('Build basic tools toolchain') {
+      steps {
+        sh "docker build -t cjww-development/basic-tools:latest -f basic-tools/Dockerfile ."
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}
